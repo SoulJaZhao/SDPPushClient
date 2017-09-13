@@ -7,21 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660572E1F69623700861535 /* SDPBaseViewController.swift */; };
+		966057361F69644400861535 /* SDPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966057351F69644400861535 /* SDPLoginViewController.swift */; };
 		967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967DD7D61F6955E0006E4684 /* AppDelegate.swift */; };
-		967DD7D91F6955E0006E4684 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967DD7D81F6955E0006E4684 /* ViewController.swift */; };
-		967DD7DC1F6955E0006E4684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967DD7DA1F6955E0006E4684 /* Main.storyboard */; };
 		967DD7DE1F6955E0006E4684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967DD7DD1F6955E0006E4684 /* Assets.xcassets */; };
 		967DD7E11F6955E0006E4684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967DD7DF1F6955E0006E4684 /* LaunchScreen.storyboard */; };
+		981F1F3009E8A5C2793CDE76 /* Pods_SDPPushClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9660572E1F69623700861535 /* SDPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPBaseViewController.swift; sourceTree = "<group>"; };
+		966057351F69644400861535 /* SDPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPLoginViewController.swift; sourceTree = "<group>"; };
+		966057371F696EE300861535 /* SDPPushClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDPPushClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		967DD7D31F6955E0006E4684 /* SDPPushClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDPPushClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967DD7D61F6955E0006E4684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		967DD7D81F6955E0006E4684 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		967DD7DB1F6955E0006E4684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		967DD7DD1F6955E0006E4684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		967DD7E01F6955E0006E4684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		967DD7E21F6955E0006E4684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBA021C8E7DD92867AC42DC7 /* Pods-SDPPushClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.release.xcconfig"; sourceTree = "<group>"; };
+		FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDPPushClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB86AED1C1789940CB4D89BD /* Pods-SDPPushClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +34,81 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981F1F3009E8A5C2793CDE76 /* Pods_SDPPushClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		218E3683F62E9DF881D6A133 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB86AED1C1789940CB4D89BD /* Pods-SDPPushClient.debug.xcconfig */,
+				DBA021C8E7DD92867AC42DC7 /* Pods-SDPPushClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2CB9E31E7EC35EBBD8770B77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9660572C1F6961CA00861535 /* Foundation(基础) */ = {
+			isa = PBXGroup;
+			children = (
+				9660572D1F6961FA00861535 /* ViewController(试图控制器) */,
+			);
+			name = "Foundation(基础)";
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		9660572D1F6961FA00861535 /* ViewController(试图控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				9660572E1F69623700861535 /* SDPBaseViewController.swift */,
+			);
+			name = "ViewController(试图控制器)";
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		966057301F69632400861535 /* Modules(模块) */ = {
+			isa = PBXGroup;
+			children = (
+				966057311F69634500861535 /* Login(登陆) */,
+			);
+			name = "Modules(模块)";
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		966057311F69634500861535 /* Login(登陆) */ = {
+			isa = PBXGroup;
+			children = (
+				966057341F69642F00861535 /* Controller */,
+			);
+			name = "Login(登陆)";
+			path = Login;
+			sourceTree = "<group>";
+		};
+		966057341F69642F00861535 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				966057351F69644400861535 /* SDPLoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		967DD7CA1F6955E0006E4684 = {
 			isa = PBXGroup;
 			children = (
 				967DD7D51F6955E0006E4684 /* SDPPushClient */,
 				967DD7D41F6955E0006E4684 /* Products */,
+				218E3683F62E9DF881D6A133 /* Pods */,
+				2CB9E31E7EC35EBBD8770B77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +123,13 @@
 		967DD7D51F6955E0006E4684 /* SDPPushClient */ = {
 			isa = PBXGroup;
 			children = (
+				966057301F69632400861535 /* Modules(模块) */,
+				9660572C1F6961CA00861535 /* Foundation(基础) */,
 				967DD7D61F6955E0006E4684 /* AppDelegate.swift */,
-				967DD7D81F6955E0006E4684 /* ViewController.swift */,
-				967DD7DA1F6955E0006E4684 /* Main.storyboard */,
 				967DD7DD1F6955E0006E4684 /* Assets.xcassets */,
 				967DD7DF1F6955E0006E4684 /* LaunchScreen.storyboard */,
 				967DD7E21F6955E0006E4684 /* Info.plist */,
+				966057371F696EE300861535 /* SDPPushClient-Bridging-Header.h */,
 			);
 			path = SDPPushClient;
 			sourceTree = "<group>";
@@ -71,9 +141,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 967DD7E51F6955E0006E4684 /* Build configuration list for PBXNativeTarget "SDPPushClient" */;
 			buildPhases = (
+				8A8FA2E8380BBDC6F8BA950E /* [CP] Check Pods Manifest.lock */,
 				967DD7CF1F6955E0006E4684 /* Sources */,
 				967DD7D01F6955E0006E4684 /* Frameworks */,
 				967DD7D11F6955E0006E4684 /* Resources */,
+				5C68A137EBB83B41833DDD4F /* [CP] Embed Pods Frameworks */,
+				A7357D01E08A45B645C18965 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -90,6 +163,7 @@
 		967DD7CB1F6955E0006E4684 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SDP;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = soulja;
@@ -97,6 +171,7 @@
 					967DD7D21F6955E0006E4684 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = QXMB979758;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -126,33 +201,73 @@
 			files = (
 				967DD7E11F6955E0006E4684 /* LaunchScreen.storyboard in Resources */,
 				967DD7DE1F6955E0006E4684 /* Assets.xcassets in Resources */,
-				967DD7DC1F6955E0006E4684 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C68A137EBB83B41833DDD4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A8FA2E8380BBDC6F8BA950E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A7357D01E08A45B645C18965 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		967DD7CF1F6955E0006E4684 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				967DD7D91F6955E0006E4684 /* ViewController.swift in Sources */,
 				967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */,
+				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
+				966057361F69644400861535 /* SDPLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		967DD7DA1F6955E0006E4684 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				967DD7DB1F6955E0006E4684 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		967DD7DF1F6955E0006E4684 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -205,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -249,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -259,26 +374,35 @@
 		};
 		967DD7E61F6955E0006E4684 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB86AED1C1789940CB4D89BD /* Pods-SDPPushClient.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = QXMB979758;
 				INFOPLIST_FILE = SDPPushClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulja.SDPPushClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SDPPushClient/SDPPushClient-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		967DD7E71F6955E0006E4684 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBA021C8E7DD92867AC42DC7 /* Pods-SDPPushClient.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = QXMB979758;
 				INFOPLIST_FILE = SDPPushClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulja.SDPPushClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SDPPushClient/SDPPushClient-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +426,7 @@
 				967DD7E71F6955E0006E4684 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

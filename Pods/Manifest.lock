@@ -1,0 +1,53 @@
+PODS:
+  - Alamofire (4.5.0)
+  - AlamofireSwiftyJSON (1.0.0):
+    - Alamofire (~> 4.0)
+    - SwiftyJSON (~> 3.0)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - HandyJSON (1.7.2)
+  - Hero (0.3.6)
+  - KeychainAccess (3.0.2)
+  - LTMorphingLabel (0.5.0)
+  - MBProgressHUD (1.0.0)
+  - SCLAlertView (0.7.0)
+  - SnapKit (3.2.0)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - AlamofireSwiftyJSON
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - HandyJSON
+  - Hero
+  - KeychainAccess
+  - LTMorphingLabel
+  - MBProgressHUD
+  - SCLAlertView
+  - SnapKit (~> 3.2.0)
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireSwiftyJSON: 78908b766483a28aa5cc90fd191a687467042973
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
+  KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
+  LTMorphingLabel: bc170be74b219b7dae0e5543a44676d16da70ff7
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 30d669a77bae21281e9408ff99fb74325884a677
+
+COCOAPODS: 1.1.1

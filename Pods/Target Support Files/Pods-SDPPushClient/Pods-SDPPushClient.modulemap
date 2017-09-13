@@ -1,0 +1,6 @@
+framework module Pods_SDPPushClient {
+  umbrella header "Pods-SDPPushClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
