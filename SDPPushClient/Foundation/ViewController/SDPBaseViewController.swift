@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 import MBProgressHUD
+import SCLAlertView
 
 class SDPBaseViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class SDPBaseViewController: UIViewController {
         UIApplication.shared.isStatusBarHidden = false
         // 设置背景色
         self.view.backgroundColor = UIColor.flatWhite
+        
     }
     
     //MARK:显示loading

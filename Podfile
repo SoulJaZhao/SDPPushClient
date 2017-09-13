@@ -9,7 +9,6 @@ target 'SDPPushClient' do
     pod 'LTMorphingLabel'
     pod 'KeychainAccess'
     pod 'HandyJSON'
-    pod 'SCLAlertView'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
     pod 'MBProgressHUD'
 end
