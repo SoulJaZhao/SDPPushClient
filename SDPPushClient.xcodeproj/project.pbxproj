@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		965BFB771F6AA17C001D6726 /* SDPRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965BFB761F6AA17C001D6726 /* SDPRegisterViewController.swift */; };
 		9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660572E1F69623700861535 /* SDPBaseViewController.swift */; };
 		966057361F69644400861535 /* SDPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966057351F69644400861535 /* SDPLoginViewController.swift */; };
 		967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967DD7D61F6955E0006E4684 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		965BFB761F6AA17C001D6726 /* SDPRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPRegisterViewController.swift; sourceTree = "<group>"; };
 		9660572E1F69623700861535 /* SDPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPBaseViewController.swift; sourceTree = "<group>"; };
 		966057351F69644400861535 /* SDPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPLoginViewController.swift; sourceTree = "<group>"; };
 		966057371F696EE300861535 /* SDPPushClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDPPushClient-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -66,6 +68,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		965BFB741F6AA13E001D6726 /* Register(注册) */ = {
+			isa = PBXGroup;
+			children = (
+				965BFB751F6AA160001D6726 /* Controller */,
+			);
+			name = "Register(注册)";
+			path = Register;
+			sourceTree = "<group>";
+		};
+		965BFB751F6AA160001D6726 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				965BFB761F6AA17C001D6726 /* SDPRegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9660572C1F6961CA00861535 /* Foundation(基础) */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +107,7 @@
 		966057301F69632400861535 /* Modules(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				965BFB741F6AA13E001D6726 /* Register(注册) */,
 				966057311F69634500861535 /* Login(登陆) */,
 			);
 			name = "Modules(模块)";
@@ -347,6 +367,7 @@
 				F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
 				966057361F69644400861535 /* SDPLoginViewController.swift in Sources */,
+				965BFB771F6AA17C001D6726 /* SDPRegisterViewController.swift in Sources */,
 				F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */,
 				F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */,
 			);

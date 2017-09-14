@@ -1,21 +1,21 @@
 //
-//  SDPLoginViewController.swift
+//  SDPRegisterViewController.swift
 //  SDPPushClient
 //
-//  Created by SoulJa on 2017/9/13.
+//  Created by SoulJa on 2017/9/14.
 //  Copyright © 2017年 soulja. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-class SDPLoginViewController: SDPBaseViewController {
-    /* 账户TF */
-    fileprivate let tfAccount:UITextField = UITextField()
+class SDPRegisterViewController: SDPBaseViewController {
+    /* 账号 */
+    let tfAccount:UITextField = UITextField()
+    /* 密码 */
+    let tfPassword:UITextField = UITextField()
+    /* 确认密码 */
+    let tfRePassword:UITextField = UITextField()
     
-    /* 密码TF */
-    fileprivate let tfPassword:UITextField = UITextField()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // 设置Nav
@@ -26,20 +26,13 @@ class SDPLoginViewController: SDPBaseViewController {
     
     //MARK:设置Nav
     func initNav() {
-        self.title = "登录"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .done, target: self, action: #selector(tapRegiterBtn))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .done, target: self, action: #selector(tapLoginBtn))
+        self.title = "注册"
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "确定", style: .done, target: self, action: #selector(tapDoneBtn))
     }
     
-    //MARK:点击注册按钮
-    func tapRegiterBtn() {
-        self.view.endEditing(true)
-        let vc = SDPRegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    //MARK:点击登录按钮
-    func tapLoginBtn() {
+    //MARK:点击确认按钮
+    func tapDoneBtn() {
         self.view.endEditing(true)
         //账号为空
         if String.isBlank(text: tfAccount.text) {
@@ -53,19 +46,10 @@ class SDPLoginViewController: SDPBaseViewController {
             return
         }
         
-        //发送网络请求
-        
-    }
-    
-    //MARK:登录的网络请求
-    func loginService() {
-        //url地址
-        let urlString:String = "login"
-        
-        SDPHttpsClient.POST(urlString: urlString, parameteters: nil, headers: nil, success: { (success) in
-            
-        }) { (failture) in
-            
+        // 重复密码为空
+        if String.isBlank(text: tfRePassword.text) {
+            self.showHUD(title: "请输入密码", afterDelay: kSDPHUDHideAfterDelay)
+            return
         }
     }
     
@@ -96,10 +80,23 @@ class SDPLoginViewController: SDPBaseViewController {
             make.trailing.equalTo(tfAccount.snp.trailing)
             make.height.equalTo(40)
         }
+        
+        // 确认密码tf
+        tfRePassword.isSecureTextEntry = true
+        tfRePassword.borderStyle = .roundedRect
+        tfRePassword.clearButtonMode = .whileEditing
+        tfRePassword.placeholder = "请输入密码"
+        self.view.addSubview(tfRePassword)
+        tfRePassword.snp.makeConstraints { (make) in
+            make.top.equalTo(tfPassword.snp.bottom).offset(kSDPPadding)
+            make.leading.equalTo(tfAccount.snp.leading)
+            make.trailing.equalTo(tfAccount.snp.trailing)
+            make.height.equalTo(40)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+        // Dispose of any resources that can be recreated.
     }
 }
