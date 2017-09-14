@@ -39,6 +39,32 @@ class SDPLoginViewController: SDPBaseViewController {
     //MARK:点击登录按钮
     func tapLoginBtn() {
         self.view.endEditing(true)
+        //账号为空
+        if String.isBlank(text: tfAccount.text) {
+            self.showHUD(title: "请输入账号", afterDelay: kSDPHUDHideAfterDelay)
+            return
+        }
+        
+        //密码为空
+        if String.isBlank(text: tfAccount.text) {
+            self.showHUD(title: "请输入密码", afterDelay: kSDPHUDHideAfterDelay)
+            return
+        }
+        
+        //发送网络请求
+        
+    }
+    
+    //MARK:登录的网络请求
+    func loginService() {
+        //url地址
+        let urlString:String = "login"
+        
+        SDPHttpsClient.POST(urlString: urlString, parameteters: nil, headers: nil, success: { (success) in
+            
+        }) { (failture) in
+            
+        }
     }
     
     //MARK:设置子视图

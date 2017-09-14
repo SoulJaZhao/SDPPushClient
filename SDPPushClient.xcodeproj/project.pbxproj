@@ -15,6 +15,8 @@
 		981F1F3009E8A5C2793CDE76 /* Pods_SDPPushClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */; };
 		F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */; };
 		F416AFB11F6A6401000C22E1 /* SDPMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AFB01F6A6401000C22E1 /* SDPMacro.swift */; };
+		F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */; };
+		F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		DBA021C8E7DD92867AC42DC7 /* Pods-SDPPushClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.release.xcconfig"; sourceTree = "<group>"; };
 		F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPNavigationController.swift; sourceTree = "<group>"; };
 		F416AFB01F6A6401000C22E1 /* SDPMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPMacro.swift; sourceTree = "<group>"; };
+		F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJStringExtension.swift; sourceTree = "<group>"; };
+		F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPHttpsClient.swift; sourceTree = "<group>"; };
 		FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDPPushClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB86AED1C1789940CB4D89BD /* Pods-SDPPushClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +132,8 @@
 		967DD7D51F6955E0006E4684 /* SDPPushClient */ = {
 			isa = PBXGroup;
 			children = (
+				F4CB1C351F6A786900A2DDEC /* Tools(工具) */,
+				F4CB1C301F6A6FBE00A2DDEC /* Extension(扩展) */,
 				F416AFAF1F6A6401000C22E1 /* Macro(宏文件) */,
 				966057301F69632400861535 /* Modules(模块) */,
 				9660572C1F6961CA00861535 /* Foundation(基础) */,
@@ -156,6 +162,33 @@
 			);
 			name = "Macro(宏文件)";
 			path = Macro;
+			sourceTree = "<group>";
+		};
+		F4CB1C301F6A6FBE00A2DDEC /* Extension(扩展) */ = {
+			isa = PBXGroup;
+			children = (
+				F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */,
+			);
+			name = "Extension(扩展)";
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F4CB1C351F6A786900A2DDEC /* Tools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+				F4CB1C361F6A788800A2DDEC /* Network(网络) */,
+			);
+			name = "Tools(工具)";
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		F4CB1C361F6A788800A2DDEC /* Network(网络) */ = {
+			isa = PBXGroup;
+			children = (
+				F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */,
+			);
+			name = "Network(网络)";
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,9 +344,11 @@
 			files = (
 				F416AFB11F6A6401000C22E1 /* SDPMacro.swift in Sources */,
 				967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */,
+				F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
 				966057361F69644400861535 /* SDPLoginViewController.swift in Sources */,
 				F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */,
+				F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

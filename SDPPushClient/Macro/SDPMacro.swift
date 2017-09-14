@@ -10,3 +10,6 @@ import Foundation
 
 /* 默认边距padding */
 let kSDPPadding:Int = 30
+
+/* HUD延迟隐藏时间 */
+let kSDPHUDHideAfterDelay = 2.0

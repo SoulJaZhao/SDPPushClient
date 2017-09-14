@@ -11,7 +11,7 @@ import ChameleonFramework
 import MBProgressHUD
 
 class SDPBaseViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 设置statusbar
@@ -50,6 +50,24 @@ class SDPBaseViewController: UIViewController {
             self.hideHUD()
             completeHandler()
         }
+    }
+    
+    /*
+     *  延迟消失的loading
+     *  @param  afterDelay  延迟时间
+     *  @param  title  标题
+     */
+    func showHUD(title:String, afterDelay:TimeInterval) {
+        var hud = MBProgressHUD()
+        
+        if let navigation = self.navigationController {
+            hud = MBProgressHUD.showAdded(to: navigation.view, animated: true)
+        } else {
+            hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
+        hud.mode = .text
+        hud.label.text = title
+        hud.hide(animated: true, afterDelay: afterDelay)
     }
 
     override func didReceiveMemoryWarning() {
