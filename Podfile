@@ -11,4 +11,5 @@ target 'SDPPushClient' do
     pod 'HandyJSON'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
     pod 'MBProgressHUD'
+    pod 'IQKeyboardManager'
 end

@@ -165,12 +165,12 @@
 			attributes = {
 				CLASSPREFIX = SDP;
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = soulja;
 				TargetAttributes = {
 					967DD7D21F6955E0006E4684 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = QXMB979758;
+						DevelopmentTeam = 6V3H2BMVZC;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -388,10 +388,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FB86AED1C1789940CB4D89BD /* Pods-SDPPushClient.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = QXMB979758;
+				DEVELOPMENT_TEAM = 6V3H2BMVZC;
 				INFOPLIST_FILE = SDPPushClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulja.SDPPushClient;
@@ -406,10 +406,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBA021C8E7DD92867AC42DC7 /* Pods-SDPPushClient.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = QXMB979758;
+				DEVELOPMENT_TEAM = 6V3H2BMVZC;
 				INFOPLIST_FILE = SDPPushClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulja.SDPPushClient;

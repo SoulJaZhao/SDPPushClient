@@ -9,7 +9,6 @@
 import UIKit
 import ChameleonFramework
 import MBProgressHUD
-import SCLAlertView
 
 class SDPBaseViewController: UIViewController {
 
