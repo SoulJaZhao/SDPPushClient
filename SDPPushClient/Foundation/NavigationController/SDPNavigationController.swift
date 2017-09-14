@@ -1,5 +1,5 @@
 //
-//  SDPNavigationViewController.swift
+//  SDPNavigationController.swift
 //  SDPPushClient
 //
 //  Created by SDPMobile on 2017/9/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SDPNavigationViewController: UINavigationController {
+class SDPNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

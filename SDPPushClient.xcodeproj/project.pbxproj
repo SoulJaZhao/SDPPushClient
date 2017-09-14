@@ -13,6 +13,8 @@
 		967DD7DE1F6955E0006E4684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967DD7DD1F6955E0006E4684 /* Assets.xcassets */; };
 		967DD7E11F6955E0006E4684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967DD7DF1F6955E0006E4684 /* LaunchScreen.storyboard */; };
 		981F1F3009E8A5C2793CDE76 /* Pods_SDPPushClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */; };
+		F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */; };
+		F416AFB11F6A6401000C22E1 /* SDPMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AFB01F6A6401000C22E1 /* SDPMacro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		967DD7E01F6955E0006E4684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		967DD7E21F6955E0006E4684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBA021C8E7DD92867AC42DC7 /* Pods-SDPPushClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.release.xcconfig"; sourceTree = "<group>"; };
+		F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPNavigationController.swift; sourceTree = "<group>"; };
+		F416AFB01F6A6401000C22E1 /* SDPMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPMacro.swift; sourceTree = "<group>"; };
 		FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDPPushClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB86AED1C1789940CB4D89BD /* Pods-SDPPushClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +65,7 @@
 		9660572C1F6961CA00861535 /* Foundation(基础) */ = {
 			isa = PBXGroup;
 			children = (
+				F416AFAC1F6A6317000C22E1 /* NavigationController(导航控制器) */,
 				9660572D1F6961FA00861535 /* ViewController(试图控制器) */,
 			);
 			name = "Foundation(基础)";
@@ -123,6 +128,7 @@
 		967DD7D51F6955E0006E4684 /* SDPPushClient */ = {
 			isa = PBXGroup;
 			children = (
+				F416AFAF1F6A6401000C22E1 /* Macro(宏文件) */,
 				966057301F69632400861535 /* Modules(模块) */,
 				9660572C1F6961CA00861535 /* Foundation(基础) */,
 				967DD7D61F6955E0006E4684 /* AppDelegate.swift */,
@@ -132,6 +138,24 @@
 				966057371F696EE300861535 /* SDPPushClient-Bridging-Header.h */,
 			);
 			path = SDPPushClient;
+			sourceTree = "<group>";
+		};
+		F416AFAC1F6A6317000C22E1 /* NavigationController(导航控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */,
+			);
+			name = "NavigationController(导航控制器)";
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		F416AFAF1F6A6401000C22E1 /* Macro(宏文件) */ = {
+			isa = PBXGroup;
+			children = (
+				F416AFB01F6A6401000C22E1 /* SDPMacro.swift */,
+			);
+			name = "Macro(宏文件)";
+			path = Macro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F416AFB11F6A6401000C22E1 /* SDPMacro.swift in Sources */,
 				967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
 				966057361F69644400861535 /* SDPLoginViewController.swift in Sources */,
+				F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

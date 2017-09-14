@@ -19,10 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         // 设置根视图
         let loginVC = SDPLoginViewController()
-        let nav:UINavigationController = UINavigationController(rootViewController: loginVC)
+        let nav:SDPNavigationController = SDPNavigationController(rootViewController: loginVC)
         self.window?.rootViewController = nav
         // 展示Window
         self.window?.makeKeyAndVisible()
+        
+        // 设置键盘
+        self.initKeyBoardManeger()
         
         return true
     }
@@ -49,6 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    //MARK:设置键盘
+    func initKeyBoardManeger() {
+        
+    }
 }
 
