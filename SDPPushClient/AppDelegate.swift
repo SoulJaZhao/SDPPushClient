@@ -7,6 +7,8 @@
 //
 
 import UIKit
+/* 键盘管理 */
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -54,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //MARK:设置键盘
     func initKeyBoardManeger() {
-        
+        IQKeyboardManager.shared().isEnabled = true
     }
 }
 
