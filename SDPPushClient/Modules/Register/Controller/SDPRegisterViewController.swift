@@ -51,6 +51,34 @@ class SDPRegisterViewController: SDPBaseViewController {
             self.showHUD(title: "请输入密码", afterDelay: kSDPHUDHideAfterDelay)
             return
         }
+        
+        // 判断两次密码是否一致
+        if tfPassword.text != tfRePassword.text {
+            self.showHUD(title: "请输入一致的密码", afterDelay: kSDPHUDHideAfterDelay)
+            return
+        }
+        
+        // 注册
+        self.registerService()
+    }
+    
+    //MARK:注册服务
+    func registerService() {
+        // url
+        let urlString:String = "register/index"
+        let parameters = [
+            "account"   :   String.trimWhiteSpace(text: tfAccount.text!),
+            "password"  :   String.trimWhiteSpace(text: tfPassword.text!),
+            "rePassword"  :   String.trimWhiteSpace(text: tfRePassword.text!)
+        ]
+        //发送请求
+        self.postService(urlString: urlString, parameters: parameters, headers: nil, success: { (success) in
+            self.showHUD(title: "注册成功", afterDelay: kSDPHUDHideAfterDelay, completeHandler: { 
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+        }) { (failure) in
+            self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
+        }
     }
     
     //MARK:设置子视图

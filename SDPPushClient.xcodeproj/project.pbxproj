@@ -16,6 +16,9 @@
 		981F1F3009E8A5C2793CDE76 /* Pods_SDPPushClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */; };
 		F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */; };
 		F416AFB11F6A6401000C22E1 /* SDPMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AFB01F6A6401000C22E1 /* SDPMacro.swift */; };
+		F41AC68B1F6BB5660007A86E /* SDPAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC68A1F6BB5660007A86E /* SDPAccount.swift */; };
+		F41AC68E1F6BBA140007A86E /* SDPAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC68D1F6BBA140007A86E /* SDPAccountManager.swift */; };
+		F41AC6911F6BBC770007A86E /* SDPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC6901F6BBC770007A86E /* SDPTabBarController.swift */; };
 		F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */; };
 		F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +36,9 @@
 		DBA021C8E7DD92867AC42DC7 /* Pods-SDPPushClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.release.xcconfig"; sourceTree = "<group>"; };
 		F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPNavigationController.swift; sourceTree = "<group>"; };
 		F416AFB01F6A6401000C22E1 /* SDPMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPMacro.swift; sourceTree = "<group>"; };
+		F41AC68A1F6BB5660007A86E /* SDPAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPAccount.swift; sourceTree = "<group>"; };
+		F41AC68D1F6BBA140007A86E /* SDPAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPAccountManager.swift; sourceTree = "<group>"; };
+		F41AC6901F6BBC770007A86E /* SDPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPTabBarController.swift; sourceTree = "<group>"; };
 		F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJStringExtension.swift; sourceTree = "<group>"; };
 		F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPHttpsClient.swift; sourceTree = "<group>"; };
 		FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDPPushClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +94,7 @@
 		9660572C1F6961CA00861535 /* Foundation(基础) */ = {
 			isa = PBXGroup;
 			children = (
+				F41AC68F1F6BBC290007A86E /* TabBarController(底部导航) */,
 				F416AFAC1F6A6317000C22E1 /* NavigationController(导航控制器) */,
 				9660572D1F6961FA00861535 /* ViewController(试图控制器) */,
 			);
@@ -117,6 +124,7 @@
 		966057311F69634500861535 /* Login(登陆) */ = {
 			isa = PBXGroup;
 			children = (
+				F41AC6891F6BB4EF0007A86E /* Model */,
 				966057341F69642F00861535 /* Controller */,
 			);
 			name = "Login(登陆)";
@@ -152,6 +160,7 @@
 		967DD7D51F6955E0006E4684 /* SDPPushClient */ = {
 			isa = PBXGroup;
 			children = (
+				F41AC68C1F6BB9C10007A86E /* Singleton(单例) */,
 				F4CB1C351F6A786900A2DDEC /* Tools(工具) */,
 				F4CB1C301F6A6FBE00A2DDEC /* Extension(扩展) */,
 				F416AFAF1F6A6401000C22E1 /* Macro(宏文件) */,
@@ -182,6 +191,32 @@
 			);
 			name = "Macro(宏文件)";
 			path = Macro;
+			sourceTree = "<group>";
+		};
+		F41AC6891F6BB4EF0007A86E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC68A1F6BB5660007A86E /* SDPAccount.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F41AC68C1F6BB9C10007A86E /* Singleton(单例) */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC68D1F6BBA140007A86E /* SDPAccountManager.swift */,
+			);
+			name = "Singleton(单例)";
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		F41AC68F1F6BBC290007A86E /* TabBarController(底部导航) */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC6901F6BBC770007A86E /* SDPTabBarController.swift */,
+			);
+			name = "TabBarController(底部导航)";
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		F4CB1C301F6A6FBE00A2DDEC /* Extension(扩展) */ = {
@@ -367,8 +402,11 @@
 				F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
 				966057361F69644400861535 /* SDPLoginViewController.swift in Sources */,
+				F41AC6911F6BBC770007A86E /* SDPTabBarController.swift in Sources */,
+				F41AC68E1F6BBA140007A86E /* SDPAccountManager.swift in Sources */,
 				965BFB771F6AA17C001D6726 /* SDPRegisterViewController.swift in Sources */,
 				F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */,
+				F41AC68B1F6BB5660007A86E /* SDPAccount.swift in Sources */,
 				F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

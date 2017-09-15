@@ -69,6 +69,32 @@ class SDPBaseViewController: UIViewController {
         hud.label.text = title
         hud.hide(animated: true, afterDelay: afterDelay)
     }
+    
+    /*
+     *  延迟消失的loading
+     *  @param  afterDelay  延迟时间
+     *  @param  title  标题
+     *  @param  completeHandler 处理完成block
+     */
+    func showHUD(title:String, afterDelay:TimeInterval, completeHandler:@escaping ()->Void) {
+        self.showHUD(title: title, afterDelay: afterDelay)
+        completeHandler()
+    }
+    
+    //MARK:发送POST请求
+    func postService(urlString:String, parameters:[String: Any]?, headers:[String: String]?, success:@escaping (SDPHttpsRespnse) -> (), failure:@escaping (SDPHttpsRespnse)->()) {
+        // 显示HUD
+        self.showHUD()
+        SDPHttpsClient.POST(urlString: urlString, parameteters: parameters, headers: headers, success: { (successResponse) in
+            //隐藏HUD
+            self.hideHUD()
+            success(successResponse)
+        }) { (failureResponse) in
+            //隐藏HUD
+            self.hideHUD()
+            failure(failureResponse)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

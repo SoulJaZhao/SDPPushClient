@@ -54,18 +54,30 @@ class SDPLoginViewController: SDPBaseViewController {
         }
         
         //发送网络请求
-        
+        self.loginService()
     }
     
     //MARK:登录的网络请求
     func loginService() {
         //url地址
-        let urlString:String = "login"
+        let urlString:String = "login/index"
+        //参数
+        let parameters = [
+            "account"   :   String.trimWhiteSpace(text: tfAccount.text!),
+            "password"  :   String.trimWhiteSpace(text: tfPassword.text!)
+        ]
         
-        SDPHttpsClient.POST(urlString: urlString, parameteters: nil, headers: nil, success: { (success) in
+        self.postService(urlString: urlString, parameters: parameters, headers: nil, success: { (success) in
+            guard let model = Account.deserialize(from: success.data as? NSDictionary) else {
+                return
+            }
             
-        }) { (failture) in
+            // 赋值给单例
+            SDPAccountManager.defaultManager.account = model
             
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }) { (failure) in
+            self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
         }
     }
     

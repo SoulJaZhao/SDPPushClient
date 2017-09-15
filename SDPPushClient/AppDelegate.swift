@@ -20,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 创建Window
         self.window = UIWindow(frame: UIScreen.main.bounds)
         // 设置根视图
-        let loginVC = SDPLoginViewController()
-        let nav:SDPNavigationController = SDPNavigationController(rootViewController: loginVC)
-        self.window?.rootViewController = nav
+        let tabbar = SDPTabBarController()
+        self.window?.rootViewController = tabbar
         // 展示Window
         self.window?.makeKeyAndVisible()
         
