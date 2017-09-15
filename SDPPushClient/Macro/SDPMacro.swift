@@ -13,3 +13,6 @@ let kSDPPadding:Int = 30
 
 /* HUD延迟隐藏时间 */
 let kSDPHUDHideAfterDelay = 2.0
+
+/* 设置TouchID的KEY */
+let kSDPTouchIDSupportType = "SDPTouchIDSupportType"

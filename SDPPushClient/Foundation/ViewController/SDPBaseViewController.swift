@@ -42,19 +42,6 @@ class SDPBaseViewController: UIViewController {
     /*
      *  延迟消失的loading
      *  @param  afterDelay  延迟时间
-     *  @param  completeHandler  完成之后的block
-     */
-    func showHUD(afterDelay:TimeInterval,completeHandler:@escaping ()->Void) {
-        self.showHUD()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + afterDelay) {
-            self.hideHUD()
-            completeHandler()
-        }
-    }
-    
-    /*
-     *  延迟消失的loading
-     *  @param  afterDelay  延迟时间
      *  @param  title  标题
      */
     func showHUD(title:String, afterDelay:TimeInterval) {
@@ -77,8 +64,17 @@ class SDPBaseViewController: UIViewController {
      *  @param  completeHandler 处理完成block
      */
     func showHUD(title:String, afterDelay:TimeInterval, completeHandler:@escaping ()->Void) {
-        self.showHUD(title: title, afterDelay: afterDelay)
-        completeHandler()
+        var hud = MBProgressHUD()
+        
+        if let navigation = self.navigationController {
+            hud = MBProgressHUD.showAdded(to: navigation.view, animated: true)
+        } else {
+            hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
+        hud.mode = .text
+        hud.label.text = title
+        hud.hide(animated: true, afterDelay: afterDelay)
+        hud.completionBlock = completeHandler
     }
     
     //MARK:发送POST请求

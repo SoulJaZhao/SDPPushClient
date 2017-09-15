@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import LocalAuthentication
 
 class SDPLoginViewController: SDPBaseViewController {
     /* 账户TF */
@@ -22,6 +23,8 @@ class SDPLoginViewController: SDPBaseViewController {
         self.initNav()
         // 设置子视图
         self.initSubviews()
+        
+        self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: true)
     }
     
     //MARK:设置Nav
@@ -75,7 +78,16 @@ class SDPLoginViewController: SDPBaseViewController {
             // 赋值给单例
             SDPAccountManager.defaultManager.account = model
             
-            self.navigationController?.dismiss(animated: true, completion: nil)
+            // 判断是否设置过指纹登录
+            guard let isSetTouchID = UserDefaults.standard.object(forKey: kSDPTouchIDSupportType) else {
+                if (self.isSupportTouchID() == false) {
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                } else {
+                    self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: true)
+                }
+                return
+            }
+            
         }) { (failure) in
             self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
         }
@@ -108,6 +120,14 @@ class SDPLoginViewController: SDPBaseViewController {
             make.trailing.equalTo(tfAccount.snp.trailing)
             make.height.equalTo(40)
         }
+    }
+    
+    //MARK:判断是否支持指纹识别
+    func isSupportTouchID()->Bool {
+        let context:LAContext = LAContext()
+        var error:NSError?
+        let isSupport:Bool = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
+        return isSupport
     }
 
     override func didReceiveMemoryWarning() {

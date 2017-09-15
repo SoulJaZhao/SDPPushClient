@@ -12,7 +12,22 @@ class SDPTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 应用
+        let appVC:SDPAppListViewController = SDPAppListViewController()
+        let appNav:SDPNavigationController = SDPNavigationController(rootViewController: appVC)
+        appNav.tabBarItem = UITabBarItem(title: "应用", image: nil, selectedImage: nil)
         
+        // 推送记录
+        let pushVC:SDPPushListViewController = SDPPushListViewController()
+        let pushNav:SDPNavigationController = SDPNavigationController(rootViewController: pushVC)
+        pushNav.tabBarItem = UITabBarItem(title: "推送记录", image: nil, selectedImage: nil)
+        
+        // 设置
+        let settingVC:SDPSettingViewController = SDPSettingViewController()
+        let settingNav:SDPNavigationController = SDPNavigationController(rootViewController: settingVC)
+        settingNav.tabBarItem = UITabBarItem(title: "设置", image: nil, selectedImage: nil)
+        
+        self.viewControllers = [appNav, pushNav, settingNav]
     }
     
     override func viewDidAppear(_ animated: Bool) {

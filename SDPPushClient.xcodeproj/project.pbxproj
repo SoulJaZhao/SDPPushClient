@@ -19,6 +19,11 @@
 		F41AC68B1F6BB5660007A86E /* SDPAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC68A1F6BB5660007A86E /* SDPAccount.swift */; };
 		F41AC68E1F6BBA140007A86E /* SDPAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC68D1F6BBA140007A86E /* SDPAccountManager.swift */; };
 		F41AC6911F6BBC770007A86E /* SDPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC6901F6BBC770007A86E /* SDPTabBarController.swift */; };
+		F41AC6951F6BC2B20007A86E /* SDPAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC6941F6BC2B20007A86E /* SDPAppListViewController.swift */; };
+		F41AC6991F6BC49C0007A86E /* SDPPushListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC6981F6BC49C0007A86E /* SDPPushListViewController.swift */; };
+		F41AC69D1F6BC6110007A86E /* SDPSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */; };
+		F41AC69F1F6BC7D10007A86E /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41AC69E1F6BC7D10007A86E /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F41AC6A11F6BC8460007A86E /* SDPTouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC6A01F6BC8460007A86E /* SDPTouchIDViewController.swift */; };
 		F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */; };
 		F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +44,11 @@
 		F41AC68A1F6BB5660007A86E /* SDPAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPAccount.swift; sourceTree = "<group>"; };
 		F41AC68D1F6BBA140007A86E /* SDPAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPAccountManager.swift; sourceTree = "<group>"; };
 		F41AC6901F6BBC770007A86E /* SDPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPTabBarController.swift; sourceTree = "<group>"; };
+		F41AC6941F6BC2B20007A86E /* SDPAppListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPAppListViewController.swift; sourceTree = "<group>"; };
+		F41AC6981F6BC49C0007A86E /* SDPPushListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPPushListViewController.swift; sourceTree = "<group>"; };
+		F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPSettingViewController.swift; sourceTree = "<group>"; };
+		F41AC69E1F6BC7D10007A86E /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		F41AC6A01F6BC8460007A86E /* SDPTouchIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPTouchIDViewController.swift; sourceTree = "<group>"; };
 		F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJStringExtension.swift; sourceTree = "<group>"; };
 		F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPHttpsClient.swift; sourceTree = "<group>"; };
 		FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDPPushClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41AC69F1F6BC7D10007A86E /* LocalAuthentication.framework in Frameworks */,
 				981F1F3009E8A5C2793CDE76 /* Pods_SDPPushClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +80,7 @@
 		2CB9E31E7EC35EBBD8770B77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F41AC69E1F6BC7D10007A86E /* LocalAuthentication.framework */,
 				FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */,
 			);
 			name = Frameworks;
@@ -114,6 +126,9 @@
 		966057301F69632400861535 /* Modules(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				F41AC69A1F6BC5A00007A86E /* Setting(设置) */,
+				F41AC6961F6BC3F90007A86E /* PushList(推送记录) */,
+				F41AC6921F6BC2480007A86E /* Application(应用) */,
 				965BFB741F6AA13E001D6726 /* Register(注册) */,
 				966057311F69634500861535 /* Login(登陆) */,
 			);
@@ -135,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				966057351F69644400861535 /* SDPLoginViewController.swift */,
+				F41AC6A01F6BC8460007A86E /* SDPTouchIDViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -217,6 +233,57 @@
 			);
 			name = "TabBarController(底部导航)";
 			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		F41AC6921F6BC2480007A86E /* Application(应用) */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC6931F6BC2660007A86E /* Controller */,
+			);
+			name = "Application(应用)";
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F41AC6931F6BC2660007A86E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC6941F6BC2B20007A86E /* SDPAppListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F41AC6961F6BC3F90007A86E /* PushList(推送记录) */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC6971F6BC4400007A86E /* Controller */,
+			);
+			name = "PushList(推送记录)";
+			path = PushList;
+			sourceTree = "<group>";
+		};
+		F41AC6971F6BC4400007A86E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC6981F6BC49C0007A86E /* SDPPushListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F41AC69A1F6BC5A00007A86E /* Setting(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC69B1F6BC5C90007A86E /* Controller */,
+			);
+			name = "Setting(设置)";
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F41AC69B1F6BC5C90007A86E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		F4CB1C301F6A6FBE00A2DDEC /* Extension(扩展) */ = {
@@ -401,11 +468,15 @@
 				967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */,
 				F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
+				F41AC6951F6BC2B20007A86E /* SDPAppListViewController.swift in Sources */,
 				966057361F69644400861535 /* SDPLoginViewController.swift in Sources */,
 				F41AC6911F6BBC770007A86E /* SDPTabBarController.swift in Sources */,
+				F41AC6991F6BC49C0007A86E /* SDPPushListViewController.swift in Sources */,
 				F41AC68E1F6BBA140007A86E /* SDPAccountManager.swift in Sources */,
 				965BFB771F6AA17C001D6726 /* SDPRegisterViewController.swift in Sources */,
 				F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */,
+				F41AC6A11F6BC8460007A86E /* SDPTouchIDViewController.swift in Sources */,
+				F41AC69D1F6BC6110007A86E /* SDPSettingViewController.swift in Sources */,
 				F41AC68B1F6BB5660007A86E /* SDPAccount.swift in Sources */,
 				F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */,
 			);
