@@ -16,3 +16,10 @@ let kSDPHUDHideAfterDelay = 2.0
 
 /* 设置TouchID的KEY */
 let kSDPTouchIDSupportType = "SDPTouchIDSupportType"
+
+enum SDPTouchIDSupportType:Int {
+    /* 不支持TouchID */
+    case NoSupported = 0
+    /* 支持TouchID */
+    case Supported = 1
+}
