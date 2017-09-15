@@ -23,8 +23,6 @@ class SDPLoginViewController: SDPBaseViewController {
         self.initNav()
         // 设置子视图
         self.initSubviews()
-        
-        self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: true)
     }
     
     //MARK:设置Nav
@@ -87,6 +85,7 @@ class SDPLoginViewController: SDPBaseViewController {
                 }
                 return
             }
+            //TODO:优化指纹登录的思路
             
         }) { (failure) in
             self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
