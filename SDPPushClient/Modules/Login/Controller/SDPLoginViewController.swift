@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import LocalAuthentication
 
-class SDPLoginViewController: SDPBaseViewController {
+class SDPLoginViewController: SDPBaseViewController,UIAlertViewDelegate {
     /* 账户TF */
     fileprivate let tfAccount:UITextField = UITextField()
     
@@ -23,6 +23,15 @@ class SDPLoginViewController: SDPBaseViewController {
         self.initNav()
         // 设置子视图
         self.initSubviews()
+        
+        // 设置了TouchID登陆
+        if let isSetTouchID = UserDefaults.standard.value(forKey: kSDPTouchIDSupportType) as? Int {
+            if (isSetTouchID == SDPTouchIDSupportType.Supported.rawValue) {
+//                self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: false)
+            } else {
+                return
+            }
+        }
     }
     
     //MARK:设置Nav
@@ -77,15 +86,23 @@ class SDPLoginViewController: SDPBaseViewController {
             SDPAccountManager.defaultManager.account = model
             
             // 判断是否设置过指纹登录
-            guard let isSetTouchID = UserDefaults.standard.object(forKey: kSDPTouchIDSupportType) else {
-                if (self.isSupportTouchID() == false) {
-                    self.navigationController?.dismiss(animated: true, completion: nil)
-                } else {
-                    self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: true)
-                }
+            //设备不支持TouchID 直接登陆
+            if (self.isSupportTouchID() == false) {
+                self.navigationController?.dismiss(animated: true, completion: nil)
                 return
             }
-            //TODO:优化指纹登录的思路
+            //设备支持TouchID
+            let isSetTouchID:Int? = UserDefaults.standard.value(forKey: kSDPTouchIDSupportType) as? Int
+            
+            if (isSetTouchID == nil) {
+                let alertView = UIAlertView(title: "警告", message: "设置指纹登陆", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+                alertView.show()
+            } else if (isSetTouchID == SDPTouchIDSupportType.NoSupported.rawValue) {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: true)
+            }
+            
             
         }) { (failure) in
             self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
@@ -127,6 +144,19 @@ class SDPLoginViewController: SDPBaseViewController {
         var error:NSError?
         let isSupport:Bool = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
         return isSupport
+    }
+    //MARK:UIAlertViewDelegate
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        // 点击取消
+        if buttonIndex == 0 {
+            UserDefaults.standard.set(SDPTouchIDSupportType.NoSupported.rawValue, forKey: kSDPTouchIDSupportType)
+            UserDefaults.standard.synchronize()
+            self.dismiss(animated: true, completion: nil)
+        }
+        //点击确定
+        else {
+            self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
