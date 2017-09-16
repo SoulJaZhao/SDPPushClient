@@ -22,16 +22,42 @@ class SDPTouchIDViewController: SDPBaseViewController {
         let context:LAContext = LAContext()
         var error:NSError?
         
+        // 设备不支持指纹识别
+        if (context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) == false) {
+            UserDefaults.standard.set(SDPTouchIDSupportType.NoSupported.rawValue, forKey: kSDPTouchIDSupportType)
+            UserDefaults.standard.synchronize()
+            self.showHUD(title: "设备不支持TouchID", afterDelay: kSDPHUDHideAfterDelay, completeHandler: {
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+        }
         // 支持指纹识别
-        if (context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) == true) {
+        else {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "指纹登录", reply: { (isSuccess, error) in
+                // 指纹识别成功
                 if (isSuccess == true) {
-                    UserDefaults.standard.set(SDPTouchIDSupportType.Supported.rawValue, forKey: kSDPTouchIDSupportType)
-                    UserDefaults.standard.synchronize()
-                    self.dismiss(animated: true, completion: {
-                        self.performSelector(inBackground: #selector(self.playVoice), with: nil)
-                    })
-                } else {
+                    // 切换到主线程
+                    DispatchQueue.main.async {
+                        //判断Keychain
+                        guard let account = self.getKeychain().0 else {
+                            self.showHUD(title: "Keychain为保存数据,请使用账号密码登陆", afterDelay: kSDPHUDHideAfterDelay, completeHandler: {
+                                self.navigationController?.popToRootViewController(animated: true)
+                            })
+                            return
+                        }
+                        
+                        guard let password = self.getKeychain().1 else {
+                            self.showHUD(title: "Keychain为保存数据,请使用账号密码登陆", afterDelay: kSDPHUDHideAfterDelay, completeHandler: {
+                                self.navigationController?.popToRootViewController(animated: true)
+                            })
+                            return
+                        }
+                        
+                        // 登陆操作
+                        self.loginService(account: account, password: password)
+                    }
+                }
+                // 指纹识别失败
+                else {
                     UserDefaults.standard.set(SDPTouchIDSupportType.NoSupported.rawValue, forKey: kSDPTouchIDSupportType)
                     UserDefaults.standard.synchronize()
                     DispatchQueue.main.async {
@@ -42,11 +68,36 @@ class SDPTouchIDViewController: SDPBaseViewController {
                 }
             })
         }
-        // 不支持指纹识别
-        else {
-            UserDefaults.standard.set(SDPTouchIDSupportType.NoSupported.rawValue, forKey: kSDPTouchIDSupportType)
+    }
+    
+    //MARK:登陆操作
+    func loginService(account:String, password:String) {
+        //url地址
+        let urlString:String = "login/index"
+        //参数
+        let parameters = [
+            "account"   :   account,
+            "password"  :   password
+        ]
+        
+        self.postService(urlString: urlString, parameters: parameters, headers: nil, success: { (success) in
+            guard let model = Account.deserialize(from: success.data as? NSDictionary) else {
+                return
+            }
+            
+            // 赋值给单例
+            SDPAccountManager.defaultManager.account = model
+            
+            //记录登陆状态
+            UserDefaults.standard.set(SDPTouchIDSupportType.Supported.rawValue, forKey: kSDPTouchIDSupportType)
             UserDefaults.standard.synchronize()
-            self.showHUD(title: "设备不支持TouchID", afterDelay: kSDPHUDHideAfterDelay, completeHandler: {
+            
+            self.dismiss(animated: true, completion: { 
+                self.performSelector(inBackground: #selector(self.playVoice), with: nil)
+            })
+            
+        }) { (failure) in
+            self.showHUD(title: "登陆失败，请尝试账号密码登陆", afterDelay: kSDPHUDHideAfterDelay, completeHandler: { 
                 self.navigationController?.popToRootViewController(animated: true)
             })
         }

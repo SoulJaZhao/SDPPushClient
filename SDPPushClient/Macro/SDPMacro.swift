@@ -23,3 +23,10 @@ enum SDPTouchIDSupportType:Int {
     /* 支持TouchID */
     case Supported = 1
 }
+
+/* Keychain */
+let kSDPKeychainServive = "SDPPushClient"
+
+let kSDPKeychainAccount = "SDPKeychainAccount"
+
+let kSDPKeychainPassword = "SDPKeychainPassword"

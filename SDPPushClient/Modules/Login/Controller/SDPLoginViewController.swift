@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import LocalAuthentication
+import KeychainAccess
 
 class SDPLoginViewController: SDPBaseViewController,UIAlertViewDelegate {
     /* 账户TF */
@@ -27,7 +28,7 @@ class SDPLoginViewController: SDPBaseViewController,UIAlertViewDelegate {
         // 设置了TouchID登陆
         if let isSetTouchID = UserDefaults.standard.value(forKey: kSDPTouchIDSupportType) as? Int {
             if (isSetTouchID == SDPTouchIDSupportType.Supported.rawValue) {
-//                self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: false)
+                self.navigationController?.pushViewController(SDPTouchIDViewController(), animated: false)
             } else {
                 return
             }
@@ -85,6 +86,9 @@ class SDPLoginViewController: SDPBaseViewController,UIAlertViewDelegate {
             // 赋值给单例
             SDPAccountManager.defaultManager.account = model
             
+            // 设置keychain
+            self.saveKeychain(account: String.trimWhiteSpace(text: self.tfAccount.text!), password: String.trimWhiteSpace(text: self.tfPassword.text!))
+            
             // 判断是否设置过指纹登录
             //设备不支持TouchID 直接登陆
             if (self.isSupportTouchID() == false) {
@@ -135,6 +139,15 @@ class SDPLoginViewController: SDPBaseViewController,UIAlertViewDelegate {
             make.leading.equalTo(tfAccount.snp.leading)
             make.trailing.equalTo(tfAccount.snp.trailing)
             make.height.equalTo(40)
+        }
+        // 填充账号密码
+        let accountInfo:(String?, String?) = self.getKeychain()
+        if let account = accountInfo.0 {
+            tfAccount.text = account
+        }
+        
+        if let password = accountInfo.1 {
+            tfPassword.text = password
         }
     }
     

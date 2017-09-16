@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 import MBProgressHUD
+import KeychainAccess
 
 class SDPBaseViewController: UIViewController {
     
@@ -90,6 +91,41 @@ class SDPBaseViewController: UIViewController {
             self.hideHUD()
             failure(failureResponse)
         }
+    }
+    
+    //MARK:保存keychain
+    func saveKeychain(account:String, password:String) {
+        let keychain = Keychain(service: kSDPKeychainServive)
+        do {
+            try keychain.set(account, key: kSDPKeychainAccount)
+        } catch  {
+            print(error)
+        }
+        
+        do {
+            try keychain.set(password, key: kSDPKeychainPassword)
+        } catch {
+            print(error)
+        }
+    }
+    
+    //MARK:获取keychain内容
+    func getKeychain()->(String?, String?) {
+        let keychain = Keychain(service: kSDPKeychainServive)
+        // 账号
+        var account:String?
+        // 密码
+        var password:String?
+        
+        if let accountTemp = try? keychain.get(kSDPKeychainAccount) {
+            account = accountTemp
+        }
+        
+        if let passwordTemp = try? keychain.get(kSDPKeychainPassword) {
+            password = passwordTemp
+        }
+        
+        return (account,password)
     }
 
     override func didReceiveMemoryWarning() {
