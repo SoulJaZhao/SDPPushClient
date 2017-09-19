@@ -14,12 +14,21 @@ class SDPAppListViewController: SDPBaseViewController, UITableViewDataSource, UI
     var tableView:UITableView = UITableView()
     let cellId = "cellId"
     
+    /* APP应用数据 */
+    var appListData:[SDPApp]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 设置Nav
         self.initNav()
         // 设置子视图
         self.initSubviews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 获取app列表信息
+        self.getAppListService()
     }
     
     //MARK:设置Nav
@@ -36,20 +45,48 @@ class SDPAppListViewController: SDPBaseViewController, UITableViewDataSource, UI
         self.view.addSubview(tableView)
     }
     
+    //MARK:获取app列表信息
+    func getAppListService() {
+        let urlString:String = "app/index"
+        
+        guard let accessToken:String = SDPAccountManager.defaultManager.account?.accessToken else {
+            return
+        }
+        
+        let parameters = [
+            "accessToken"   :   accessToken
+        ]
+        
+        self.postService(urlString: urlString, parameters: parameters, headers: nil, success: { (success) in
+            guard let appList:SDPAppList = SDPAppList.deserialize(from: success.data as? NSDictionary) else {
+                return
+            }
+            self.appListData = appList.appList
+            self.tableView.reloadData()
+            
+        }) { (failure) in
+            self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
+        }
+    }
+    
     //MARK:UITableViewDataSource, UITableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        guard let list = appListData else {
+            return 0
+        }
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellId) else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = "haha"
+        let app:SDPApp = appListData![indexPath.row]
+        cell.textLabel?.text = app.appname
         return cell
     }
 

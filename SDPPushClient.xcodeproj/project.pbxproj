@@ -13,6 +13,7 @@
 		967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967DD7D61F6955E0006E4684 /* AppDelegate.swift */; };
 		967DD7DE1F6955E0006E4684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967DD7DD1F6955E0006E4684 /* Assets.xcassets */; };
 		967DD7E11F6955E0006E4684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967DD7DF1F6955E0006E4684 /* LaunchScreen.storyboard */; };
+		96AA7C4D1F7135CB00578037 /* SDPAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AA7C4C1F7135CB00578037 /* SDPAppModel.swift */; };
 		981F1F3009E8A5C2793CDE76 /* Pods_SDPPushClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */; };
 		F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */; };
 		F416AFB11F6A6401000C22E1 /* SDPMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416AFB01F6A6401000C22E1 /* SDPMacro.swift */; };
@@ -38,6 +39,7 @@
 		967DD7DD1F6955E0006E4684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		967DD7E01F6955E0006E4684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		967DD7E21F6955E0006E4684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96AA7C4C1F7135CB00578037 /* SDPAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPAppModel.swift; sourceTree = "<group>"; };
 		DBA021C8E7DD92867AC42DC7 /* Pods-SDPPushClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.release.xcconfig"; sourceTree = "<group>"; };
 		F416AFAD1F6A634E000C22E1 /* SDPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPNavigationController.swift; sourceTree = "<group>"; };
 		F416AFB01F6A6401000C22E1 /* SDPMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPMacro.swift; sourceTree = "<group>"; };
@@ -191,6 +193,14 @@
 			path = SDPPushClient;
 			sourceTree = "<group>";
 		};
+		96AA7C4B1F7135B400578037 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96AA7C4C1F7135CB00578037 /* SDPAppModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F416AFAC1F6A6317000C22E1 /* NavigationController(导航控制器) */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +248,7 @@
 		F41AC6921F6BC2480007A86E /* Application(应用) */ = {
 			isa = PBXGroup;
 			children = (
+				96AA7C4B1F7135B400578037 /* Model */,
 				F41AC6931F6BC2660007A86E /* Controller */,
 			);
 			name = "Application(应用)";
@@ -469,6 +480,7 @@
 				F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
 				F41AC6951F6BC2B20007A86E /* SDPAppListViewController.swift in Sources */,
+				96AA7C4D1F7135CB00578037 /* SDPAppModel.swift in Sources */,
 				966057361F69644400861535 /* SDPLoginViewController.swift in Sources */,
 				F41AC6911F6BBC770007A86E /* SDPTabBarController.swift in Sources */,
 				F41AC6991F6BC49C0007A86E /* SDPPushListViewController.swift in Sources */,
