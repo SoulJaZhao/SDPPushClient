@@ -14,6 +14,12 @@ struct SDPAppList : HandyJSON {
 }
 
 struct SDPApp : HandyJSON{
+    var id:Int!
     var appname:String!
+    var access_key_id:String!
     var access_key_secret:String!
+    var appkey:String!
+    var user_id:Int!
+    var createtime:Int!
+    var account:String!
 }

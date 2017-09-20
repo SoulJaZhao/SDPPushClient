@@ -34,6 +34,14 @@ class SDPAppListViewController: SDPBaseViewController, UITableViewDataSource, UI
     //MARK:设置Nav
     func initNav() {
         self.title = "应用列表"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "添加应用", style: .done, target: self, action: #selector(tapAddApp))
+    }
+    
+    //MARK:点击添加应用
+    func tapAddApp() {
+        let vc = SDPAddAppViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK:设置子视图
@@ -42,6 +50,7 @@ class SDPAppListViewController: SDPBaseViewController, UITableViewDataSource, UI
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
+        tableView.tableFooterView = UIView()
         self.view.addSubview(tableView)
     }
     

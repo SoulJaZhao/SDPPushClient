@@ -25,6 +25,8 @@
 		F41AC69D1F6BC6110007A86E /* SDPSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */; };
 		F41AC69F1F6BC7D10007A86E /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41AC69E1F6BC7D10007A86E /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F41AC6A11F6BC8460007A86E /* SDPTouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC6A01F6BC8460007A86E /* SDPTouchIDViewController.swift */; };
+		F4B34C2E1F722F68005CA14D /* SDPAddAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B34C2D1F722F68005CA14D /* SDPAddAppViewController.swift */; };
+		F4B34C321F723474005CA14D /* SDPTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B34C311F723474005CA14D /* SDPTextFieldCell.swift */; };
 		F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */; };
 		F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPSettingViewController.swift; sourceTree = "<group>"; };
 		F41AC69E1F6BC7D10007A86E /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		F41AC6A01F6BC8460007A86E /* SDPTouchIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPTouchIDViewController.swift; sourceTree = "<group>"; };
+		F4B34C2D1F722F68005CA14D /* SDPAddAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPAddAppViewController.swift; sourceTree = "<group>"; };
+		F4B34C311F723474005CA14D /* SDPTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPTextFieldCell.swift; sourceTree = "<group>"; };
 		F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJStringExtension.swift; sourceTree = "<group>"; };
 		F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPHttpsClient.swift; sourceTree = "<group>"; };
 		FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDPPushClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,7 @@
 		9660572C1F6961CA00861535 /* Foundation(基础) */ = {
 			isa = PBXGroup;
 			children = (
+				F4B34C301F723275005CA14D /* TextFieldCell */,
 				F41AC68F1F6BBC290007A86E /* TabBarController(底部导航) */,
 				F416AFAC1F6A6317000C22E1 /* NavigationController(导航控制器) */,
 				9660572D1F6961FA00861535 /* ViewController(试图控制器) */,
@@ -248,6 +253,7 @@
 		F41AC6921F6BC2480007A86E /* Application(应用) */ = {
 			isa = PBXGroup;
 			children = (
+				F4B34C2F1F723245005CA14D /* View */,
 				96AA7C4B1F7135B400578037 /* Model */,
 				F41AC6931F6BC2660007A86E /* Controller */,
 			);
@@ -259,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				F41AC6941F6BC2B20007A86E /* SDPAppListViewController.swift */,
+				F4B34C2D1F722F68005CA14D /* SDPAddAppViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,6 +302,21 @@
 				F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F4B34C2F1F723245005CA14D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4B34C301F723275005CA14D /* TextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				F4B34C311F723474005CA14D /* SDPTextFieldCell.swift */,
+			);
+			path = TextFieldCell;
 			sourceTree = "<group>";
 		};
 		F4CB1C301F6A6FBE00A2DDEC /* Extension(扩展) */ = {
@@ -360,7 +382,7 @@
 				TargetAttributes = {
 					967DD7D21F6955E0006E4684 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = QXMB979758;
+						DevelopmentTeam = 6V3H2BMVZC;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -476,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F416AFB11F6A6401000C22E1 /* SDPMacro.swift in Sources */,
+				F4B34C321F723474005CA14D /* SDPTextFieldCell.swift in Sources */,
 				967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */,
 				F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
@@ -489,6 +512,7 @@
 				F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */,
 				F41AC6A11F6BC8460007A86E /* SDPTouchIDViewController.swift in Sources */,
 				F41AC69D1F6BC6110007A86E /* SDPSettingViewController.swift in Sources */,
+				F4B34C2E1F722F68005CA14D /* SDPAddAppViewController.swift in Sources */,
 				F41AC68B1F6BB5660007A86E /* SDPAccount.swift in Sources */,
 				F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */,
 			);
@@ -620,7 +644,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = QXMB979758;
+				DEVELOPMENT_TEAM = 6V3H2BMVZC;
 				INFOPLIST_FILE = SDPPushClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulja.SDPPushClient;
@@ -638,7 +662,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = QXMB979758;
+				DEVELOPMENT_TEAM = 6V3H2BMVZC;
 				INFOPLIST_FILE = SDPPushClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulja.SDPPushClient;
