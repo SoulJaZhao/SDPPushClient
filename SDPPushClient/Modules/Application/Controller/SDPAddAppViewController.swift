@@ -44,7 +44,31 @@ class SDPAddAppViewController: SDPBaseViewController, UITableViewDataSource, UIT
     
     //MARK:点击确定
     func tapDone() {
+        self.view.endEditing(true)
         
+        //检验是否为空
+        if String.isBlank(text: appnameTfCell.tfInput.text) {
+            self.showHUD(title: "请输入应用名称", afterDelay: kSDPHUDHideAfterDelay)
+            return
+        }
+        
+        if String.isBlank(text: accessKeyIdTfCell.tfInput.text) {
+            self.showHUD(title: "请输入AccessKeyId", afterDelay: kSDPHUDHideAfterDelay)
+            return
+        }
+        
+        if String.isBlank(text: accessKeySecretTfCell.tfInput.text) {
+            self.showHUD(title: "请输入AccessKeySecret", afterDelay: kSDPHUDHideAfterDelay)
+            return
+        }
+        
+        if String.isBlank(text: appkeyTfCell.tfInput.text) {
+            self.showHUD(title: "请输入appkey", afterDelay: kSDPHUDHideAfterDelay)
+            return
+        }
+        
+        // 发送添加应用服务
+        self.addAppService()
     }
     
     //MARK:设置子视图
@@ -100,6 +124,39 @@ class SDPAddAppViewController: SDPBaseViewController, UITableViewDataSource, UIT
             accessKeySecretTfCell.tfInput.text = text
         } else if textFieldCell == appkeyTfCell {
             appkeyTfCell.tfInput.text = text
+        }
+    }
+    
+    //MARK:发送添加应用服务
+    func addAppService() {
+        // accessToken
+        guard let accessToken:String = SDPAccountManager.defaultManager.account?.accessToken else {
+            return
+        }
+        //user_id
+        guard let user_id:Int = SDPAccountManager.defaultManager.account?.accountId else {
+            return
+        }
+        
+        let urlString:String = "app/addApp"
+        
+        let parameters = [
+            "appname"       :       appnameTfCell.tfInput.text!,
+            "access_key_id" :       accessKeyIdTfCell.tfInput.text!,
+            "access_key_secret" :   accessKeySecretTfCell.tfInput.text!,
+            "appkey"        :       appkeyTfCell.tfInput.text!,
+            "user_id"       :       user_id,
+            "accessToken"   :       accessToken
+        ] as [String : Any]
+        
+        self.postService(urlString: urlString, parameters: parameters, headers: nil, success: { (success) in
+            if success.errorCode == 0 {
+                self.showHUD(title: "添加应用成功", afterDelay: kSDPHUDHideAfterDelay, completeHandler: { 
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
+        }) { (failure) in
+            self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
         }
     }
 
