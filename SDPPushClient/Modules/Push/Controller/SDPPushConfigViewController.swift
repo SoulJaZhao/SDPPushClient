@@ -51,6 +51,8 @@ class SDPPushConfigViewController: SDPBaseViewController, UITableViewDataSource,
     
     //MARK:点击下一步
     func tapNextStep() {
+        self.view.endEditing(true)
+        
         // 参数校验
         let target:String = targetCell.tfInput.text!
         let targetValue:String = targetValueCell.tfInput.text!

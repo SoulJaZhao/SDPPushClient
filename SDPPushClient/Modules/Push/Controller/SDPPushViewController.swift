@@ -44,6 +44,8 @@ class SDPPushViewController: SDPBaseViewController, UITableViewDataSource, UITab
     
     //MARK:点击确定按钮
     func tapDone() {
+        self.view.endEditing(true)
+        
         // 获取参数
         guard let userId:Int = SDPAccountManager.defaultManager.account?.accountId else {
             return
@@ -77,12 +79,33 @@ class SDPPushViewController: SDPBaseViewController, UITableViewDataSource, UITab
         
         let apns:String = apnsCell.tfInput.text!
         
-        if String.isNumberic(text: badge) {
+        if String.isNumberic(text: badge) == false {
             self.showHUD(title: "角标只能为数字", afterDelay: kSDPHUDHideAfterDelay)
             return
         }
         
+        let urlString:String = "push/index"
         
+        let parameters = [
+            "userId"        :       userId,
+            "accessToken"   :       accessToken,
+            "appId"         :       appId,
+            "target"        :       target,
+            "targetValue"   :       targetValue,
+            "deviceType"    :       deviceType,
+            "pushType"      :       pushType,
+            "title"         :       title,
+            "body"          :       body,
+            "badge"         :       badge,
+            "silent"        :       silent,
+            "apns"          :       apns
+        ] as [String : Any]
+        
+        self.postService(urlString: urlString, parameters: parameters, headers: nil, success: { (success) in
+            print(success)
+        }) { (failure) in
+            self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
+        }
     }
     
     //MARK:设置子视图
