@@ -25,6 +25,9 @@
 		F41AC69D1F6BC6110007A86E /* SDPSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */; };
 		F41AC69F1F6BC7D10007A86E /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41AC69E1F6BC7D10007A86E /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F41AC6A11F6BC8460007A86E /* SDPTouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41AC6A01F6BC8460007A86E /* SDPTouchIDViewController.swift */; };
+		F46666AF1F735FB400996DA1 /* SDPPushConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46666AE1F735FB400996DA1 /* SDPPushConfigViewController.swift */; };
+		F46666B21F73844000996DA1 /* SDPPushConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46666B11F73844000996DA1 /* SDPPushConfig.swift */; };
+		F46666B41F73874200996DA1 /* SDPPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46666B31F73874200996DA1 /* SDPPushViewController.swift */; };
 		F4B34C2E1F722F68005CA14D /* SDPAddAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B34C2D1F722F68005CA14D /* SDPAddAppViewController.swift */; };
 		F4B34C321F723474005CA14D /* SDPTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B34C311F723474005CA14D /* SDPTextFieldCell.swift */; };
 		F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */; };
@@ -53,6 +56,9 @@
 		F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPSettingViewController.swift; sourceTree = "<group>"; };
 		F41AC69E1F6BC7D10007A86E /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		F41AC6A01F6BC8460007A86E /* SDPTouchIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPTouchIDViewController.swift; sourceTree = "<group>"; };
+		F46666AE1F735FB400996DA1 /* SDPPushConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPPushConfigViewController.swift; sourceTree = "<group>"; };
+		F46666B11F73844000996DA1 /* SDPPushConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPPushConfig.swift; sourceTree = "<group>"; };
+		F46666B31F73874200996DA1 /* SDPPushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPPushViewController.swift; sourceTree = "<group>"; };
 		F4B34C2D1F722F68005CA14D /* SDPAddAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPAddAppViewController.swift; sourceTree = "<group>"; };
 		F4B34C311F723474005CA14D /* SDPTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPTextFieldCell.swift; sourceTree = "<group>"; };
 		F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJStringExtension.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		966057301F69632400861535 /* Modules(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				F46666AC1F735EE400996DA1 /* Push(推送) */,
 				F41AC69A1F6BC5A00007A86E /* Setting(设置) */,
 				F41AC6961F6BC3F90007A86E /* PushList(推送记录) */,
 				F41AC6921F6BC2480007A86E /* Application(应用) */,
@@ -302,6 +309,33 @@
 				F41AC69C1F6BC6110007A86E /* SDPSettingViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F46666AC1F735EE400996DA1 /* Push(推送) */ = {
+			isa = PBXGroup;
+			children = (
+				F46666B01F73841200996DA1 /* Model */,
+				F46666AD1F735F4F00996DA1 /* Controller */,
+			);
+			name = "Push(推送)";
+			path = Push;
+			sourceTree = "<group>";
+		};
+		F46666AD1F735F4F00996DA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F46666AE1F735FB400996DA1 /* SDPPushConfigViewController.swift */,
+				F46666B31F73874200996DA1 /* SDPPushViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F46666B01F73841200996DA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F46666B11F73844000996DA1 /* SDPPushConfig.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F4B34C2F1F723245005CA14D /* View */ = {
@@ -501,6 +535,8 @@
 				F4B34C321F723474005CA14D /* SDPTextFieldCell.swift in Sources */,
 				967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */,
 				F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */,
+				F46666B41F73874200996DA1 /* SDPPushViewController.swift in Sources */,
+				F46666AF1F735FB400996DA1 /* SDPPushConfigViewController.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
 				F41AC6951F6BC2B20007A86E /* SDPAppListViewController.swift in Sources */,
 				96AA7C4D1F7135CB00578037 /* SDPAppModel.swift in Sources */,
@@ -511,6 +547,7 @@
 				965BFB771F6AA17C001D6726 /* SDPRegisterViewController.swift in Sources */,
 				F416AFAE1F6A634E000C22E1 /* SDPNavigationController.swift in Sources */,
 				F41AC6A11F6BC8460007A86E /* SDPTouchIDViewController.swift in Sources */,
+				F46666B21F73844000996DA1 /* SDPPushConfig.swift in Sources */,
 				F41AC69D1F6BC6110007A86E /* SDPSettingViewController.swift in Sources */,
 				F4B34C2E1F722F68005CA14D /* SDPAddAppViewController.swift in Sources */,
 				F41AC68B1F6BB5660007A86E /* SDPAccount.swift in Sources */,

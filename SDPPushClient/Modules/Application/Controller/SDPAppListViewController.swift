@@ -96,7 +96,21 @@ class SDPAppListViewController: SDPBaseViewController, UITableViewDataSource, UI
         }
         let app:SDPApp = appListData![indexPath.row]
         cell.textLabel?.text = app.appname
+        cell.accessoryType = .disclosureIndicator
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let app:SDPApp = appListData?[indexPath.row] else {
+            return
+        }
+        
+        let vc = SDPPushConfigViewController()
+        vc.app = app
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

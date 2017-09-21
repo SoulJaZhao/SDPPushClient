@@ -12,6 +12,9 @@ class SDPTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBar.isTranslucent = false
+        
         // 应用
         let appVC:SDPAppListViewController = SDPAppListViewController()
         let appNav:SDPNavigationController = SDPNavigationController(rootViewController: appVC)

@@ -12,7 +12,6 @@ class SDPAddAppViewController: SDPBaseViewController, UITableViewDataSource, UIT
     
     /* tableView */
     var tableView:UITableView = UITableView()
-    let cellId = "cellId"
     
     /* placeholder数组 */
     let placeholderArray = [
@@ -94,7 +93,7 @@ class SDPAddAppViewController: SDPBaseViewController, UITableViewDataSource, UIT
         if let cellIdentifier:SDPTextFieldCell = tableView.dequeueReusableCell(withIdentifier: identifier) as? SDPTextFieldCell {
             cell = cellIdentifier
         } else {
-            cell = SDPTextFieldCell(style: .default, reuseIdentifier: cellId)
+            cell = SDPTextFieldCell(style: .default, reuseIdentifier: identifier)
         }
 
         if indexPath.section == 0 {

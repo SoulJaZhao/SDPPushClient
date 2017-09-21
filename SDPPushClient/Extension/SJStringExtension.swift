@@ -30,4 +30,13 @@ extension String {
         str = str.replacingOccurrences(of: " ", with: "")
         return str
     }
+    
+    //MARK:判断字符串是否是整数
+    public static func isNumberic(text:String)->Bool {
+        let scan:Scanner = Scanner(string: text)
+        
+        var val:Int = 0
+        
+        return scan.scanInt(&val) && scan.isAtEnd
+    }
 }
