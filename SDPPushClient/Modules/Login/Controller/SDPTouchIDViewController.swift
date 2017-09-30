@@ -93,7 +93,7 @@ class SDPTouchIDViewController: SDPBaseViewController {
             UserDefaults.standard.synchronize()
             
             self.dismiss(animated: true, completion: { 
-                self.performSelector(inBackground: #selector(self.playVoice), with: nil)
+               
             })
             
         }) { (failure) in

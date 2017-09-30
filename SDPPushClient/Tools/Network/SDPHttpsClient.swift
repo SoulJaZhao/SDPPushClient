@@ -22,7 +22,7 @@ struct SDPHttpsRespnse: HandyJSON {
 }
 
 #if DEBUG
-let SDPBaseUrlString:String = "http://18.220.97.96/SDPPushServer/public/api/"
+let SDPBaseUrlString:String = "http://10.241.90.2/SDPPushServer/public/api/"
 #else
 let SDPBaseUrlString:String = "http://18.220.97.96/SDPPushServer/public/api/"
 #endif

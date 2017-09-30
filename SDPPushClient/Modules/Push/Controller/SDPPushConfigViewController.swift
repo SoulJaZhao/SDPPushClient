@@ -142,7 +142,7 @@ class SDPPushConfigViewController: SDPBaseViewController, UITableViewDataSource,
             targetCell.tfInput.text = "ACCOUNT"
         } else if (indexPath.section == 1) {
             targetValueCell = textFieldCell
-            targetValueCell.tfInput.text = "AA049604"
+            targetValueCell.tfInput.text = "AA002761"
         } else if (indexPath.section == 2) {
             deviceTypeCell = textFieldCell
             deviceTypeCell.tfInput.text = "iOS"

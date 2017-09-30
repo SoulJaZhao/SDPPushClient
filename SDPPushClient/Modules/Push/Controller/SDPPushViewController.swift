@@ -102,7 +102,9 @@ class SDPPushViewController: SDPBaseViewController, UITableViewDataSource, UITab
         ] as [String : Any]
         
         self.postService(urlString: urlString, parameters: parameters, headers: nil, success: { (success) in
-            print(success)
+            self.showHUD(title: "推送成功", afterDelay: kSDPHUDHideAfterDelay, completeHandler: { 
+                self.navigationController?.popToRootViewController(animated: true)
+            })
         }) { (failure) in
             self.showHUD(title: failure.errorMsg, afterDelay: kSDPHUDHideAfterDelay)
         }
@@ -116,7 +118,7 @@ class SDPPushViewController: SDPBaseViewController, UITableViewDataSource, UITab
         self.view.addSubview(tableView)
     }
     
-     //MARK:UITableViewDataSource, UITableViewDelegate
+    //MARK:UITableViewDataSource, UITableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }

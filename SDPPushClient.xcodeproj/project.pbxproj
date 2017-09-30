@@ -32,6 +32,7 @@
 		F4B34C321F723474005CA14D /* SDPTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B34C311F723474005CA14D /* SDPTextFieldCell.swift */; };
 		F4CB1C341F6A706500A2DDEC /* SJStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */; };
 		F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */; };
+		F4D411611F7F6BFB00C4E9C6 /* SDPPushModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D411601F7F6BFB00C4E9C6 /* SDPPushModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		F4B34C311F723474005CA14D /* SDPTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPTextFieldCell.swift; sourceTree = "<group>"; };
 		F4CB1C331F6A706500A2DDEC /* SJStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJStringExtension.swift; sourceTree = "<group>"; };
 		F4CB1C371F6A78C900A2DDEC /* SDPHttpsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPHttpsClient.swift; sourceTree = "<group>"; };
+		F4D411601F7F6BFB00C4E9C6 /* SDPPushModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPPushModel.swift; sourceTree = "<group>"; };
 		FB74D4FC4C9A3E625C3A38EF /* Pods_SDPPushClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDPPushClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB86AED1C1789940CB4D89BD /* Pods-SDPPushClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDPPushClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDPPushClient/Pods-SDPPushClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,6 +282,7 @@
 		F41AC6961F6BC3F90007A86E /* PushList(推送记录) */ = {
 			isa = PBXGroup;
 			children = (
+				F4D4115F1F7F6BBE00C4E9C6 /* Model */,
 				F41AC6971F6BC4400007A86E /* Controller */,
 			);
 			name = "PushList(推送记录)";
@@ -378,6 +381,14 @@
 			);
 			name = "Network(网络)";
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F4D4115F1F7F6BBE00C4E9C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4D411601F7F6BFB00C4E9C6 /* SDPPushModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,6 +547,7 @@
 				967DD7D71F6955E0006E4684 /* AppDelegate.swift in Sources */,
 				F4CB1C381F6A78C900A2DDEC /* SDPHttpsClient.swift in Sources */,
 				F46666B41F73874200996DA1 /* SDPPushViewController.swift in Sources */,
+				F4D411611F7F6BFB00C4E9C6 /* SDPPushModel.swift in Sources */,
 				F46666AF1F735FB400996DA1 /* SDPPushConfigViewController.swift in Sources */,
 				9660572F1F69623700861535 /* SDPBaseViewController.swift in Sources */,
 				F41AC6951F6BC2B20007A86E /* SDPAppListViewController.swift in Sources */,
